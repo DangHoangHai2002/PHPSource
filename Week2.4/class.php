@@ -33,31 +33,28 @@
             crossorigin="anonymous"
         ></script>
         <?php
-        
-        $sinh_vien = array(
-            array(
-                "id" => 1,
-                "name" => "Sinh viên A",
-                "tuoi" => 20,
-                "diem" => 8.5
-            ),
-            array(
-                "id" => 2,
-                "name" => "Sinh viên B",
-                "tuoi" => 21,
-                "diem" => 7.8
-            ),
-        );
-        
-        foreach ($sinh_vien as $sv) {
-            echo "ID: " . $sv["id"] . "\n";
-            echo "Tên: " . $sv["name"] . "\n";
-            echo "Tuổi: " . $sv["tuoi"] . "\n";
-            echo "Điểm: " . $sv["diem"] . "\n";
-            echo "\n";
-            echo "<br>";
-        }
-        ?>
+class Fruit
+{
+    public $name;
+    public $color;
+    public function set_name($name)
+    {
+        $this->name = $name;
+    }
+    public function get_name()
+    {
+        return $this->name;
+    }
+}
+
+$Lemon = new Fruit();
+$Lemon->set_name("Lemon");
+echo 'The first fruit: ' . $Lemon->get_name().'<br>';
+$Apple = new Fruit();
+$Apple->set_name('Apple');
+echo "The second fruit:" . $Apple->get_name() . '.<br/>';
+echo (var_dump($Apple instanceof Fruit));
+?>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
