@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <title>Title</title>
+        
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -20,50 +21,39 @@
 
     <body>
         <header>
-            <!-- place navbar here -->
+        <?php
+        require_once"layout/top.php"
+        ?>
         </header>
-        <main></main>
+        <main>
+            <div class="container-fluid">   
+                <div class = "row flex-nowrap">
+                    <div class ="col-auto col-md-3 col-x1-2 px-sm-2 px-0 bg-red">
+                <?php
+                require_once"layout/left.php";
+                
+                ?>
+            </div>
+            <div id="" class= "col py-3">
+                <?php
+                require_once"./MVC/views/pages/" .$data["Page"].".php" ;
+                ?>  
+            </div>
+            </div>
+            </div>
+        </main>
         <footer>
-            <!-- place footer here -->
+            <?php
+            require_once"layout/bottom.php"
+            ?>
         </footer>
-        <!-- Bootstrap JavaScript Libraries -->
+        
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
             crossorigin="anonymous"
         ></script>
-        <?php
-class Fruit
-{
-    public $name;
-    public $color;
-    public function set_name($name)
-    {
-        $this->name = $name;
-    }
-    function __construct($name, $color)
-    {
-        $this->name= $name;
-        $this->color = $color;
-    }
-    public function get_name()
-    {
-        return $this->name;
-    }
-    public function get_color(){
-        return $this->color;
-    }
-}
 
-$Lemon = new Fruit("Lemon", "yellow");
-$Lemon->set_name("Lemon");
-echo 'The first fruit: ' . $Lemon->get_name().'<br>';
-echo 'The first fruit: ' . $Lemon->get_color().'<br>';
-$Apple = new Fruit("","Red");
-$Apple->set_name('Apple');
-echo "The second fruit:" . $Apple->get_name() . '.<br/>';
-var_dump($Apple instanceof Fruit);
-?>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
@@ -71,4 +61,3 @@ var_dump($Apple instanceof Fruit);
         ></script>
     </body>
 </html>
-//btvn tao product(ID,Name,Price,Amount,Company,Year) thiet ke form nhap vao 1 mang xuat ra man hinh
